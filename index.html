@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dinesh Kumar M — Blockchain Engineer | Smart Contract Developer | Web3</title>
+<meta name="description" content="Dinesh Kumar M — Blockchain Engineer & Smart Contract Developer from Coimbatore, India. Specializing in Solidity, Ethereum DApps, DeFi, NFTs, and Web3 full-stack development."/>
+<meta name="keywords" content="Blockchain Engineer, Smart Contract Developer, Solidity, Ethereum, Web3, DeFi, NFT, Hardhat, React, Dinesh Kumar, Coimbatore"/>
+<meta name="author" content="Dinesh Kumar M"/>
+<meta property="og:title" content="Dinesh Kumar M — Blockchain Engineer"/>
+<meta property="og:description" content="Final-year Blockchain student building secure smart contracts, DApps, and Web3 full-stack systems."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#03070d;
+  --bg2:#060d18;
+  --surface:#0a1525;
+  --surface2:#0e1c30;
+  --border:#162338;
+  --border2:#1e3050;
+  --cyan:#00e5ff;
+  --violet:#8b5cf6;
+  --green:#00ffa3;
+  --orange:#ff7043;
+  --text:#dceeff;
+  --muted:#5a7a9a;
+  --muted2:#3a5570;
+  --heading:'Space Grotesk',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --serif:'Fraunces',serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--mono);
+  font-weight:300;
+  line-height:1.7;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor{
+  position:fixed;top:0;left:0;
+  width:10px;height:10px;
+  background:var(--cyan);border-radius:50%;
+  pointer-events:none;z-index:9999;
+  will-change:transform;
+  mix-blend-mode:screen;
+  transition:transform 0.08s linear;
+}
+.cursor-ring{
+  position:fixed;top:0;left:0;
+  width:36px;height:36px;
+  border:1.5px solid rgba(0,229,255,0.45);border-radius:50%;
+  pointer-events:none;z-index:9998;
+  will-change:transform;
+  transition:width 0.2s ease,height 0.2s ease,border-color 0.2s ease;
+}
+
+/* ── GRID BG ── */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,229,255,0.025) 1px,transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none;z-index:0;
+}
+
+/* ── ORBS ── */
+.orb{position:fixed;border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0;animation:drift 20s ease-in-out infinite alternate;}
+.orb1{width:700px;height:700px;background:rgba(0,229,255,0.04);top:-200px;right:-200px;animation-delay:0s}
+.orb2{width:500px;height:500px;background:rgba(139,92,246,0.05);bottom:-100px;left:-150px;animation-delay:-7s}
+.orb3{width:300px;height:300px;background:rgba(0,255,163,0.03);top:40%;left:60%;animation-delay:-14s}
+@keyframes drift{0%{transform:translate(0,0)}100%{transform:translate(30px,20px)}}
+
+.container{max-width:1000px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:1}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1.1rem 0;
+  background:rgba(3,7,13,0.85);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  transition:background 0.3s;
+}
+nav.scrolled{background:rgba(3,7,13,0.97);}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 2.5rem;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{
+  font-family:var(--heading);font-weight:700;font-size:1rem;
+  color:var(--cyan);letter-spacing:-0.02em;
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;
+}
+.nav-logo::before{
+  content:'';width:8px;height:8px;border-radius:50%;
+  background:var(--green);flex-shrink:0;
+  animation:blink 2s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.nav-links{display:flex;gap:2.5rem;align-items:center;}
+.nav-links a{
+  font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color 0.2s;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;
+  height:1px;background:var(--cyan);
+  transform:scaleX(0);transform-origin:left;transition:transform 0.25s;
+}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--cyan)}
+.nav-links a.active::after{transform:scaleX(1)}
+.nav-hire{
+  font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;
+  padding:6px 16px;border-radius:4px;
+  border:1px solid rgba(0,229,255,0.4);
+  color:var(--cyan);background:rgba(0,229,255,0.06);
+  text-decoration:none;transition:all 0.2s;
+}
+.nav-hire:hover{background:rgba(0,229,255,0.14);border-color:var(--cyan);box-shadow:0 0 16px rgba(0,229,255,0.15);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--muted);border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{
+  display:none;position:fixed;top:57px;left:0;right:0;z-index:99;
+  background:rgba(3,7,13,0.98);backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  padding:1.5rem 2.5rem 2rem;
+  flex-direction:column;gap:1.5rem;
+  transform:translateY(-110%);transition:transform 0.3s ease;
+}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu a{
+  font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color 0.2s;
+}
+.mobile-menu a:hover{color:var(--cyan)}
+.mobile-menu .nav-hire{align-self:flex-start;margin-top:0.5rem;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 0 5rem;}
+.hero-inner{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;}
+.hero-left{max-width:640px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--green);border:1px solid rgba(0,255,163,0.25);
+  padding:5px 14px 5px 10px;border-radius:30px;margin-bottom:2.5rem;
+  background:rgba(0,255,163,0.05);
+  animation:fadeUp 0.6s ease both;
+}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+.hero h1{
+  font-family:var(--heading);font-weight:700;
+  font-size:clamp(3.2rem,7vw,5.8rem);
+  line-height:0.95;letter-spacing:-0.04em;
+  margin-bottom:0.2em;
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero h1 .gradient{
+  display:block;
+  background:linear-gradient(120deg,var(--cyan) 0%,var(--violet) 50%,var(--green) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  background-size:200% auto;
+  animation:shimmer 5s linear infinite, fadeUp 0.7s 0.1s ease both;
+}
+@keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
+.hero-role{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:1.25rem;color:var(--muted);
+  margin:1.4rem 0 2.8rem;line-height:1.6;
+  animation:fadeUp 0.7s 0.2s ease both;
+}
+.hero-ctas{display:flex;gap:0.8rem;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:0.8rem 1.7rem;border-radius:6px;
+  font-family:var(--mono);font-size:0.75rem;font-weight:500;
+  letter-spacing:0.07em;text-decoration:none;
+  transition:all 0.2s;cursor:none;border:none;
+}
+.btn-primary{
+  background:var(--cyan);color:#000;font-weight:600;
+  box-shadow:0 0 24px rgba(0,229,255,0.25);
+}
+.btn-primary:hover{background:#33ecff;transform:translateY(-2px);box-shadow:0 0 36px rgba(0,229,255,0.4)}
+.btn-ghost{
+  background:transparent;color:var(--text);
+  border:1px solid var(--border2);
+}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.btn-green{
+  background:rgba(0,255,163,0.05);color:var(--green);
+  border:1px solid rgba(0,255,163,0.35);
+}
+.btn-green:hover{background:rgba(0,255,163,0.1);transform:translateY(-2px);box-shadow:0 0 20px rgba(0,255,163,0.1)}
+
+.hero-stats{
+  display:flex;gap:0;margin-top:4rem;padding-top:2.5rem;
+  border-top:1px solid var(--border);flex-wrap:wrap;
+  animation:fadeUp 0.7s 0.4s ease both;
+}
+.stat{padding:0 2.5rem 0 0;margin-right:2.5rem;border-right:1px solid var(--border);}
+.stat:last-child{border-right:none;margin-right:0;padding-right:0;}
+.stat-val{
+  font-family:var(--heading);font-size:2.2rem;font-weight:700;
+  color:var(--cyan);line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.stat-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+
+/* TERMINAL */
+.hero-right{animation:fadeUp 0.7s 0.5s ease both;}
+.terminal{
+  width:300px;background:var(--surface);
+  border:1px solid var(--border2);border-radius:12px;
+  overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(0,229,255,0.06);
+}
+.terminal-bar{
+  background:var(--surface2);padding:12px 16px;
+  display:flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--border);
+}
+.t-dot{width:10px;height:10px;border-radius:50%;}
+.t-dot:nth-child(1){background:#ff5f57}
+.t-dot:nth-child(2){background:#ffbd2e}
+.t-dot:nth-child(3){background:#28c840}
+.terminal-title{font-size:0.62rem;letter-spacing:0.1em;color:var(--muted);margin-left:auto;margin-right:auto;}
+.terminal-body{padding:1.2rem 1.4rem;font-size:0.7rem;line-height:2;}
+.t-line{display:flex;gap:8px;align-items:flex-start;}
+.t-prompt{color:var(--green);flex-shrink:0}
+.t-cmd{color:var(--cyan)}
+.t-out{color:#8fa8bf;padding-left:16px}
+.t-cursor{
+  display:inline-block;width:7px;height:13px;
+  background:var(--cyan);margin-left:2px;
+  animation:blink 1s step-end infinite;vertical-align:text-bottom;
+}
+
+/* ── SECTION COMMON ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+section{padding:6rem 0}
+.section-header{margin-bottom:0;}
+.section-label{
+  font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--violet);margin-bottom:0.6rem;
+  display:flex;align-items:center;gap:8px;
+}
+.section-label::before{content:'//';color:var(--border2);}
+.section-title{
+  font-family:var(--heading);font-weight:700;
+  font-size:2.4rem;letter-spacing:-0.03em;line-height:1.1;
+  margin-bottom:0.8rem;
+}
+.section-rule{width:36px;height:2px;background:var(--cyan);}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity 0.65s ease,transform 0.65s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:5rem;align-items:start;margin-top:3rem;}
+.about-text p{font-size:0.88rem;color:#9ab5cf;line-height:2;margin-bottom:1.2rem;}
+.about-text strong{color:var(--text);font-weight:500;}
+.about-meta{
+  display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.5rem;
+}
+.meta-pill{
+  font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
+  padding:4px 12px;border-radius:30px;
+  border:1px solid var(--border2);color:var(--muted);
+  display:flex;align-items:center;gap:5px;
+}
+.meta-pill span{font-size:0.8rem;}
+
+/* SKILLS */
+.skills-block{display:flex;flex-direction:column;gap:1.4rem;}
+.skill-group-label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.6rem;}
+.chips{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{
+  font-size:0.65rem;letter-spacing:0.05em;
+  padding:4px 11px;border-radius:4px;
+  border:1px solid var(--border);color:var(--muted);
+  background:var(--surface);transition:all 0.2s;
+}
+.chip:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,0.05);}
+.chip.core{border-color:rgba(0,229,255,0.3);color:var(--cyan);background:rgba(0,229,255,0.07);}
+.chip.violet{border-color:rgba(139,92,246,0.3);color:#a78bfa;background:rgba(139,92,246,0.07);}
+
+/* ── PROJECTS ── */
+.projects-grid{display:flex;flex-direction:column;gap:1.2rem;margin-top:3rem;}
+.project-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:2.2rem;
+  position:relative;overflow:hidden;
+  transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;
+}
+.project-card::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),rgba(0,229,255,0.04),transparent 60%);
+  pointer-events:none;opacity:0;transition:opacity 0.3s;
+}
+.project-card:hover::after{opacity:1}
+.project-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--green));
+  opacity:0;transition:opacity 0.3s;
+}
+.project-card:hover{border-color:rgba(0,229,255,0.25);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4);}
+.project-card:hover::before{opacity:1}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.2rem;}
+.project-name{font-family:var(--heading);font-size:1.3rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;}
+.project-links{display:flex;gap:6px;flex-wrap:wrap;}
+.proj-link{
+  font-size:0.65rem;letter-spacing:0.08em;
+  padding:4px 12px;border-radius:4px;
+  text-decoration:none;border:1px solid var(--border2);
+  color:var(--muted);background:var(--surface2);
+  transition:all 0.15s;
+}
+.proj-link:hover{border-color:var(--cyan);color:var(--cyan)}
+.project-tags{display:flex;gap:5px;flex-wrap:wrap;align-self:flex-start;}
+.tag{
+  font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;
+  padding:3px 9px;border-radius:3px;
+  background:rgba(139,92,246,0.1);color:#b4a4ff;
+  border:1px solid rgba(139,92,246,0.2);
+}
+.project-desc{font-size:0.83rem;color:#7a9ab5;line-height:1.85;margin-bottom:1.2rem;}
+.project-bullets{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.project-bullets li{
+  font-size:0.78rem;color:#6a8ba8;
+  padding-left:1.4rem;position:relative;line-height:1.7;
+}
+.project-bullets li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:0.7rem;}
+.badge{
+  display:inline-flex;align-items:center;
+  margin-left:6px;font-size:0.6rem;
+  padding:2px 8px;border-radius:20px;
+  background:rgba(0,255,163,0.08);color:var(--green);
+  border:1px solid rgba(0,255,163,0.2);
+  vertical-align:middle;
+}
+.project-featured{
+  position:absolute;top:1.2rem;right:1.4rem;
+  font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--orange);border:1px solid rgba(255,112,67,0.3);
+  padding:3px 8px;border-radius:3px;
+  background:rgba(255,112,67,0.07);
+}
+
+/* ── STRENGTHS & CERTS ── */
+.strengths-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0.8rem;margin-bottom:2.5rem;margin-top:3rem;}
+.strength-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:1.4rem 1rem;text-align:center;
+  transition:all 0.25s;
+}
+.strength-card:hover{border-color:var(--violet);background:rgba(139,92,246,0.06);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.3);}
+.strength-icon{font-size:1.6rem;margin-bottom:0.6rem;}
+.strength-name{font-size:0.7rem;letter-spacing:0.04em;font-weight:500;color:#aac0d8;}
+.cert-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.cert-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:1.4rem;
+  display:flex;align-items:center;gap:1.2rem;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.cert-card:hover{border-color:rgba(0,229,255,0.3);transform:translateY(-2px);}
+.cert-icon{
+  width:44px;height:44px;border-radius:8px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(0,229,255,0.12),rgba(139,92,246,0.12));
+  border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+}
+.cert-name{font-size:0.82rem;font-weight:500;margin-bottom:3px;}
+.cert-sub{font-size:0.67rem;color:var(--muted);}
+
+/* ── EDUCATION ── */
+.edu-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:2.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1.5rem;
+  position:relative;overflow:hidden;
+  margin-top:3rem;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.edu-card:hover{border-color:rgba(0,229,255,0.2);transform:translateY(-2px);}
+.edu-card::before{
+  content:'';position:absolute;top:0;left:0;width:4px;height:100%;
+  background:linear-gradient(to bottom,var(--cyan),var(--violet));
+}
+.edu-degree{font-family:var(--heading);font-size:1.2rem;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em;}
+.edu-school{font-size:0.82rem;color:var(--muted);}
+.edu-badge{
+  font-size:0.7rem;padding:7px 16px;border-radius:30px;
+  background:rgba(0,255,163,0.08);color:var(--green);
+  border:1px solid rgba(0,255,163,0.25);white-space:nowrap;
+  font-weight:500;
+}
+
+/* ── CONTACT ── */
+.contact-wrapper{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;margin-top:3rem;
+}
+.contact-top-bar{
+  padding:3rem;
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.contact-top-bar::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,229,255,0.03) 0%,rgba(139,92,246,0.03) 100%);
+  pointer-events:none;
+}
+.contact-title{
+  font-family:var(--heading);font-size:2rem;font-weight:700;
+  letter-spacing:-0.03em;margin-bottom:0.5rem;
+}
+.contact-sub{font-size:0.85rem;color:var(--muted);margin-bottom:2rem;line-height:1.7;}
+.contact-social{display:flex;gap:0.8rem;flex-wrap:wrap;}
+.social-link{
+  font-size:0.72rem;letter-spacing:0.06em;
+  padding:8px 16px;border-radius:6px;
+  text-decoration:none;border:1px solid var(--border2);
+  color:var(--muted);background:var(--surface2);
+  transition:all 0.2s;
+  display:flex;align-items:center;gap:6px;
+}
+.social-link:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,0.06);transform:translateY(-2px);}
+.contact-form{padding:3rem;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field.full{grid-column:1/-1;}
+.form-field label{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);}
+.form-field input,
+.form-field textarea{
+  background:var(--surface2);border:1px solid var(--border2);
+  border-radius:6px;padding:0.75rem 1rem;
+  color:var(--text);font-family:var(--mono);font-size:0.8rem;font-weight:300;
+  transition:border-color 0.2s,box-shadow 0.2s;
+  outline:none;resize:vertical;
+}
+.form-field input:focus,
+.form-field textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,229,255,0.08);}
+.form-field input::placeholder,
+.form-field textarea::placeholder{color:var(--muted2);}
+.form-submit{
+  display:inline-flex;align-items:center;gap:8px;margin-top:1rem;
+  padding:0.85rem 2rem;border-radius:6px;
+  font-family:var(--mono);font-size:0.75rem;font-weight:600;
+  letter-spacing:0.07em;
+  background:var(--cyan);color:#000;border:none;cursor:none;
+  transition:all 0.2s;
+  box-shadow:0 0 24px rgba(0,229,255,0.2);
+}
+.form-submit:hover{background:#33ecff;transform:translateY(-2px);box-shadow:0 0 36px rgba(0,229,255,0.35);}
+.form-note{font-size:0.65rem;color:var(--muted);margin-top:1rem;opacity:0.7;}
+.form-success{
+  display:none;padding:1rem 1.5rem;border-radius:8px;
+  background:rgba(0,255,163,0.08);border:1px solid rgba(0,255,163,0.25);
+  color:var(--green);font-size:0.8rem;margin-top:1rem;
+}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:2.5rem 0;text-align:center;
+  color:var(--muted);font-size:0.7rem;letter-spacing:0.08em;
+}
+footer .accent{color:var(--cyan);}
+footer .dot{margin:0 0.5rem;opacity:0.4;}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{
+  position:fixed;bottom:2rem;right:2rem;
+  width:40px;height:40px;border-radius:8px;
+  background:var(--surface);border:1px solid var(--border2);
+  color:var(--muted);font-size:1rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:none;transition:all 0.25s;z-index:50;
+  opacity:0;pointer-events:none;
+}
+.scroll-top.visible{opacity:1;pointer-events:all;}
+.scroll-top:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .nav-hire{display:none;}
+  .hamburger{display:flex;}
+  .mobile-menu{display:flex;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .hero h1{font-size:clamp(2.8rem,10vw,4.5rem);}
+  .about-grid{grid-template-columns:1fr;gap:3rem;}
+  .strengths-row{grid-template-columns:repeat(3,1fr);}
+  .cert-row{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  .contact-top-bar{padding:2rem;}
+  .contact-form{padding:2rem;}
+  .hero-stats{gap:1.5rem;}
+  .stat{border-right:none;margin-right:0;padding-right:0;}
+}
+@media(max-width:500px){
+  .container{padding:0 1.2rem;}
+  .strengths-row{grid-template-columns:1fr 1fr;}
+  .stat-val{font-size:1.8rem;}
+  .section-title{font-size:2rem;}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}
+  .reveal{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">DK.dev</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:dineshkumar.dev25@gmail.com" class="nav-hire">Hire Me →</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-nav-link">About</a>
+  <a href="#projects" class="mobile-nav-link">Projects</a>
+  <a href="#skills" class="mobile-nav-link">Skills</a>
+  <a href="#education" class="mobile-nav-link">Education</a>
+  <a href="#contact" class="mobile-nav-link">Contact</a>
+  <a href="mailto:dineshkumar.dev25@gmail.com" class="nav-hire">Hire Me →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Open to Blockchain Roles
+        </div>
+        <h1>
+          Dinesh<br/>
+          <span class="gradient">Kumar M.</span>
+        </h1>
+        <p class="hero-role">
+          Blockchain Engineer crafting gas-optimized smart contracts,<br/>
+          DeFi protocols &amp; Web3 full-stack systems on Ethereum.
+        </p>
+        <div class="hero-ctas">
+          <a href="mailto:dineshkumar.dev25@gmail.com" class="btn btn-primary">✉ Get in Touch</a>
+          <a href="#projects" class="btn btn-ghost">View Projects</a>
+          <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="btn btn-ghost">⌥ GitHub</a>
+          <a href="resume.pdf" target="_blank" class="btn btn-green">    📄 Resume  </a>
+          <a href="#contact" class="btn btn-green">📬 Contact</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-val">3</div>
+            <div class="stat-label">Live Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-val">20%</div>
+            <div class="stat-label">Gas Saved</div>
+          </div>
+          <div class="stat">
+            <div class="stat-val">95%+</div>
+            <div class="stat-label">Test Coverage</div>
+          </div>
+          <div class="stat">
+            <div class="stat-val">2026</div>
+            <div class="stat-label">Graduating</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+            <span class="terminal-title">dinesh@web3:~</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">whoami</span></div>
+            <div class="t-out">Blockchain Engineer</div>
+            <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">skills --list</span></div>
+            <div class="t-out">Solidity · Hardhat</div>
+            <div class="t-out">ERC-20/721 · DeFi</div>
+            <div class="t-out">React · Ethers.js</div>
+            <div class="t-out">IPFS · MetaMask</div>
+            <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">status</span></div>
+            <div class="t-out" style="color:var(--green)">✓ Open to Work</div>
+            <div class="t-line"><span class="t-prompt">$</span><span class="t-cursor"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">01 — about</div>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a <strong>final-year B.Sc. Blockchain student</strong> at Rathinam College of Arts and Science, Tamil Nadu — specializing in Blockchain Distributed Computing, one of the rare engineering programs built around Web3 from the ground up.</p>
+        <p>I write <strong>gas-optimized Solidity contracts</strong>, architect full DApp pipelines from contract to frontend, and bring ML intuition into blockchain security through real anomaly detection systems.</p>
+        <p>I'm seeking an <strong>entry-level blockchain engineering role</strong> where I can contribute immediately — whether that's DeFi protocols, NFT infrastructure, or on-chain security tooling.</p>
+        <div class="about-meta">
+          <div class="meta-pill"><span>📍</span> Coimbatore, India</div>
+          <div class="meta-pill"><span>📞</span> +91-6382580462</div>
+          <div class="meta-pill"><span>✉</span> dineshkumar.dev25@gmail.com</div>
+        </div>
+      </div>
+      <div id="skills" class="reveal">
+        <div class="skills-block">
+          <div>
+            <div class="skill-group-label">Blockchain &amp; Smart Contracts</div>
+            <div class="chips">
+              <span class="chip core">Solidity</span>
+              <span class="chip core">Ethereum</span>
+              <span class="chip core">Hardhat</span>
+              <span class="chip core">ERC-20/721</span>
+              <span class="chip core">Ethers.js</span>
+              <span class="chip core">Web3.js</span>
+              <span class="chip">Truffle</span>
+              <span class="chip">IPFS</span>
+              <span class="chip">MetaMask</span>
+              <span class="chip">DeFi</span>
+              <span class="chip">Remix IDE</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Frontend &amp; Backend</div>
+            <div class="chips">
+              <span class="chip violet">React.js</span>
+              <span class="chip violet">Next.js</span>
+              <span class="chip violet">TypeScript</span>
+              <span class="chip violet">Node.js</span>
+              <span class="chip violet">Express.js</span>
+              <span class="chip">Python</span>
+              <span class="chip">MongoDB</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Docker</span>
+              <span class="chip">AWS</span>
+              <span class="chip">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">02 — projects</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-featured">Featured</div>
+        <div class="project-top">
+          <div>
+            <div class="project-name">NFT Marketplace</div>
+            <div class="project-links">
+              <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="proj-link">⌥ GitHub</a>
+              <a href="#" class="proj-link">🔗 Live Demo</a>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Solidity</span>
+            <span class="tag">React.js</span>
+            <span class="tag">IPFS</span>
+            <span class="tag">Hardhat</span>
+          </div>
+        </div>
+        <p class="project-desc">A fully decentralized NFT marketplace on Ethereum enabling minting, listing, buying, and selling of digital assets — built with security-first contract architecture and a seamless React frontend.</p>
+        <ul class="project-bullets">
+          <li>ERC-721 smart contracts with full marketplace logic (listing, purchasing, royalties) and <span class="badge">~20% gas reduction</span> via Solidity optimization patterns.</li>
+          <li>IPFS for decentralized metadata storage and MetaMask for secure wallet-based authentication flows.</li>
+          <li>React.js frontend with real-time event listeners via Ethers.js, giving users live NFT state updates.</li>
+        </ul>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div>
+            <div class="project-name">AI Fraud Detection for Smart Contracts</div>
+            <div class="project-links">
+              <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="proj-link">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+            <span class="tag">Ethereum</span>
+            <span class="tag">Web3.js</span>
+          </div>
+        </div>
+        <p class="project-desc">An on-chain anomaly detection system combining machine learning with live blockchain data ingestion to identify suspicious transactions in real time.</p>
+        <ul class="project-bullets">
+          <li>Isolation Forest &amp; DBSCAN algorithms to detect unusual on-chain transaction patterns with <span class="badge">high-precision risk scoring</span>.</li>
+          <li>End-to-end data pipeline: live blockchain ingestion → feature extraction → ML inference → REST API.</li>
+          <li>Rare dual-domain expertise — ML applied directly to on-chain security analysis.</li>
+        </ul>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div>
+            <div class="project-name">Token Staking DApp</div>
+            <div class="project-links">
+              <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="proj-link">⌥ GitHub</a>
+              <a href="#" class="proj-link">🔗 Live Demo</a>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Solidity</span>
+            <span class="tag">React.js</span>
+            <span class="tag">Hardhat</span>
+            <span class="tag">Ethers.js</span>
+          </div>
+        </div>
+        <p class="project-desc">A production-grade DeFi staking protocol with configurable yield mechanics and a live dashboard — showcasing deep knowledge of ERC-20 tokenomics and contract reliability.</p>
+        <ul class="project-bullets">
+          <li>ERC-20 staking contracts with configurable APY, time-lock periods, and compound reward mechanics.</li>
+          <li>Live dashboard showing real-time balances, staking history, and reward accrual for connected wallets.</li>
+          <li><span class="badge">95%+ test coverage</span> with Hardhat &amp; Chai across all contract functions — production-ready.</li>
+        </ul>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div>
+            <div class="project-name">Organic Food Traceability</div>
+            <div class="project-links">
+              <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="proj-link">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Solidity</span>
+            <span class="tag">React.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Hardhat</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
+        <p class="project-desc">A decentralized supply chain traceability system on Ethereum that tracks organic food from farm to consumer — using smart contracts to log immutable lifecycle events and verify authenticity at every stage.</p>
+        <ul class="project-bullets">
+          <li>Solidity smart contracts record tamper-proof lifecycle events on-chain; <span class="badge">SHA-256 PDF hashing</span> ensures organic certificate integrity.</li>
+          <li>Dynamic QR codes enable public batch tracking — consumers can scan and verify the full journey of any product instantly.</li>
+          <li>Node.js backend with Ethers.js handles automated transaction signing; MongoDB stores off-chain metadata for efficient querying.</li>
+        </ul>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div>
+            <div class="project-name">ZK Proof of Skill</div>
+            <div class="project-links">
+              <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="proj-link">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Solidity</span>
+            <span class="tag">Circom</span>
+            <span class="tag">ZK-SNARKs</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Hardhat</span>
+            <span class="tag">SQLite</span>
+          </div>
+        </div>
+        <p class="project-desc">A decentralized skill verification platform on Ethereum that lets developers prove their coding solutions using zero-knowledge proofs — minting non-transferable soulbound NFT trust badges without revealing the underlying answer.</p>
+        <ul class="project-bullets">
+          <li>Groth16 zero-knowledge proofs over the <span class="badge">BN254 elliptic curve</span> via Circom circuits — solutions are verified on-chain without any knowledge disclosure.</li>
+          <li>Soulbound ERC-721 NFTs (non-transferable) minted upon successful ZK verification, creating a tamper-proof, wallet-bound skill credential.</li>
+          <li>Vite frontend for challenge submission, Node.js witness generation pipeline, and SQLite for off-chain challenge registry management.</li>
+        </ul>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div>
+            <div class="project-name">AirSense</div>
+            <div class="project-links">
+              <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="proj-link">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Leaflet</span>
+            <span class="tag">Recharts</span>
+            <span class="tag">Gemini AI</span>
+          </div>
+        </div>
+        <p class="project-desc">A context-aware decision-support platform that translates complex global AQI data into actionable advice — helping users navigate urban pollution hotspots with intelligent, AI-powered health guidance.</p>
+        <ul class="project-bullets">
+          <li>Interactive <span class="badge">Leaflet-based route analyzer</span> visualizes real-time pollution hotspots, letting users plan paths that minimize air quality exposure.</li>
+          <li>Google Gemini AI delivers real-time, personalized health recommendations tailored to the user's current AQI conditions and location context.</li>
+          <li>Recharts-powered AQI dashboards and an Express/Node.js backend aggregate global air quality feeds into a clean, unified API.</li>
+        </ul>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div>
+            <div class="project-name">BlockShield</div>
+            <div class="project-links">
+              <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="proj-link">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Recharts</span>
+            <span class="tag">Web3</span>
+            <span class="tag">NetworkX</span>
+            <span class="tag">Scikit-Learn</span>
+          </div>
+        </div>
+        <p class="project-desc">A real-time, AI-powered transaction analysis and fraud detection platform that translates complex blockchain flow data into actionable security intelligence — with live threat streaming and interactive network visualization.</p>
+        <ul class="project-bullets">
+          <li>Interactive <span class="badge">force-directed network graph</span> built with NetworkX visualizes wallet clustering and fund flows, making on-chain relationships instantly readable.</li>
+          <li>Scikit-Learn ML models detect anomalies and flash loan attacks in real time; threats are streamed live to a <span class="badge">WebSocket-powered dashboard</span>.</li>
+          <li>FastAPI backend serves transaction intelligence at low latency; Recharts dashboards surface risk scores and pattern breakdowns across the React/Vite frontend.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS & CERTS -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">03 — strengths</div>
+      <h2 class="section-title">Strengths &amp; Certifications</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="strengths-row reveal">
+      <div class="strength-card"><div class="strength-icon">🔐</div><div class="strength-name">Smart Contract Security</div></div>
+      <div class="strength-card"><div class="strength-icon">⛽</div><div class="strength-name">Gas Optimization</div></div>
+      <div class="strength-card"><div class="strength-icon">🔁</div><div class="strength-name">Full DApp Lifecycle</div></div>
+      <div class="strength-card"><div class="strength-icon">🪙</div><div class="strength-name">DeFi &amp; NFT Standards</div></div>
+      <div class="strength-card"><div class="strength-icon">🌐</div><div class="strength-name">Web3 Frontend Integration</div></div>
+    </div>
+    <div class="cert-row reveal">
+      <div class="cert-card">
+        <div class="cert-icon">🎓</div>
+        <div>
+          <div class="cert-name">Blockchain Developer Certification</div>
+          <div class="cert-sub">Verified credential</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📜</div>
+        <div>
+          <div class="cert-name">Solidity Bootcamp</div>
+          <div class="cert-sub">Advanced smart contract development</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">04 — education</div>
+      <h2 class="section-title">Education</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="edu-card reveal">
+      <div>
+        <div class="edu-degree">B.Sc. Computer Technology &amp; Blockchain Distributed Computing</div>
+        <div class="edu-school">Rathinam College of Arts and Science, Tamil Nadu · 2022 – 2026</div>
+      </div>
+      <div class="edu-badge">Graduating 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">05 — contact</div>
+      <h2 class="section-title">Let's Build Together</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="contact-wrapper reveal">
+      <div class="contact-top-bar">
+        <h3 class="contact-title">Open to Opportunities</h3>
+        <p class="contact-sub">Looking for blockchain engineering roles, Web3 internships, or open-source collaborations.</p>
+        <div class="contact-social">
+          <a href="mailto:dineshkumar.dev25@gmail.com" class="social-link">✉ dineshkumar.dev25@gmail.com</a>
+          <a href="tel:+916382580462" class="social-link">📞 +91-6382580462</a>
+          <a href="https://github.com/Dineshkumar96-32" target="_blank" rel="noopener" class="social-link">⌥ GitHub</a>
+          <a href="https://www.linkedin.com/in/dinesh-zaraki" target="_blank" rel="noopener" class="social-link">in LinkedIn</a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name" required/>
+            </div>
+            <div class="form-field">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" name="email" placeholder="your@email.com" required/>
+            </div>
+            <div class="form-field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="Role / Collaboration / Other"/>
+            </div>
+            <div class="form-field">
+              <label for="fcompany">Company (optional)</label>
+              <input type="text" id="fcompany" name="company" placeholder="Company name"/>
+            </div>
+            <div class="form-field full">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about the opportunity or project..." required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+          <p class="form-note">* Your message will open in your email client pre-filled and ready to send.</p>
+          <div class="form-success" id="formSuccess">✓ Opening your email client... If it didn't open, email directly at dineshkumar.dev25@gmail.com</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>
+      Designed &amp; built with precision
+      <span class="dot">·</span>
+      <span class="accent">Dinesh Kumar M</span>
+      <span class="dot">·</span>
+      Coimbatore, India
+      <span class="dot">·</span>
+      2025
+    </p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+
+<script>
+// ── Custom Cursor ──
+const cursorDot  = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursorRing');
+let mouseX=0,mouseY=0,ringX=0,ringY=0;
+
+document.addEventListener('mousemove',e=>{
+  mouseX=e.clientX; mouseY=e.clientY;
+  cursorDot.style.transform=`translate(calc(${mouseX}px - 50%),calc(${mouseY}px - 50%))`;
+});
+(function animateRing(){
+  ringX+=(mouseX-ringX)*0.14; ringY+=(mouseY-ringY)*0.14;
+  cursorRing.style.transform=`translate(calc(${ringX}px - 50%),calc(${ringY}px - 50%))`;
+  requestAnimationFrame(animateRing);
+})();
+document.querySelectorAll('a,button,.project-card,.strength-card,.cert-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{
+    cursorRing.style.width='54px'; cursorRing.style.height='54px';
+    cursorRing.style.borderColor='rgba(0,229,255,0.75)';
+  });
+  el.addEventListener('mouseleave',()=>{
+    cursorRing.style.width='36px'; cursorRing.style.height='36px';
+    cursorRing.style.borderColor='rgba(0,229,255,0.4)';
+  });
+});
+
+// ── Nav scroll effect & active link ──
+const nav=document.getElementById('nav');
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+
+  // Active nav link
+  let current='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-120) current=s.getAttribute('id');
+  });
+  navLinks.forEach(a=>{
+    a.classList.remove('active');
+    if(a.getAttribute('href')==='#'+current) a.classList.add('active');
+  });
+
+  // Scroll-to-top button
+  if(window.scrollY>400) scrollTopBtn.classList.add('visible');
+  else scrollTopBtn.classList.remove('visible');
+});
+
+// ── Hamburger menu ──
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+document.querySelectorAll('.mobile-nav-link,.mobile-menu .nav-hire').forEach(a=>{
+  a.addEventListener('click',()=>{
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// ── Scroll to top ──
+const scrollTopBtn=document.getElementById('scrollTop');
+scrollTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// ── Project card mouse-glow ──
+document.querySelectorAll('.project-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    card.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    card.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+});
+
+// ── Scroll reveal ──
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+
+document.querySelectorAll('.reveal').forEach((el,i)=>{
+  el.style.transitionDelay=(i%4)*0.08+'s';
+  observer.observe(el);
+});
+
+// ── Contact form (mailto fallback) ──
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('fname').value.trim();
+  const email=document.getElementById('femail').value.trim();
+  const subject=document.getElementById('fsubject').value.trim()||'Portfolio Inquiry';
+  const company=document.getElementById('fcompany').value.trim();
+  const message=document.getElementById('fmessage').value.trim();
+
+  if(!name||!email||!message){
+    alert('Please fill in your name, email, and message.');
+    return;
+  }
+
+  const body=`Hi Dinesh,\n\n${message}\n\n---\nFrom: ${name}${company?' ('+company+')':''}\nEmail: ${email}`;
+  const mailto=`mailto:dineshkumar.dev25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href=mailto;
+
+  document.getElementById('formSuccess').style.display='block';
+  setTimeout(()=>document.getElementById('formSuccess').style.display='none',6000);
+});
+</script>
+</body>
+</html>
